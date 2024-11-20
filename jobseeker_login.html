@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Seeker Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <h1 class="text-center text-2xl font-bold mb-8">Job Seeker Login</h1>
+
+  <form id="job_seeker_form" class="max-w-md mx-auto bg-white p-8 mb-4 rounded shadow-lg" action="job_seeker_login_process.php" method="POST" enctype="multipart/form-data">
+    <label class="block mb-4">
+        Email:
+        <input type="email" name="job_seeker_email" required class="form-input mt-1 block w-full">
+    </label>
+    <label class="block mb-4">
+        Password:
+        <input type="password" name="job_seeker_password" required class="form-input mt-1 block w-full">
+    </label>
+    <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Sign In</button>
+    <a href="jobseeker_signup.html" class="block mt-4 text-blue-500">Don't have an account? Sign up</a>
+</form>
+
+</body>
+</html>

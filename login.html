@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <form id="loginForm" class="max-w-md mx-auto bg-white p-8 mt-20 rounded shadow-lg" method="POST" action="login.php">
+    <h3 class="text-center text-2xl font-bold mb-4">Login</h3>
+
+    <label for="email" class="block mb-2">Username</label>
+    <input type="text" placeholder="Username" id="username" name="username" required class="form-input w-full mb-4">
+
+    <label for="password" class="block mb-2">Password</label>
+    <input type="password" placeholder="Password" id="password" name="password" required class="form-input w-full mb-4">
+
+    <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded w-full mb-4">Login</button>
+
+    <a href="#" id="forgotPasswordLink" class="text-blue-500 block mb-4">Forgot Password?</a>
+
+    <p class="text-center">Don't have an account? <a href="signup.html" class="text-blue-500">Sign up</a></p>
+
+    <div id="forgotPasswordForm" class="hidden">
+        <label for="forgotEmail" class="block mb-2">Enter your email to receive a password reset link:</label>
+        <input type="email" id="forgotEmail" name="forgotEmail" required class="form-input w-full mb-4">
+        <button type="button" id="sendResetLink" class="bg-blue-500 text-white px-4 py-2 rounded w-full">Send Reset Link</button>
+    </div>
+  </form>
+
+  <script>
+    const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+    const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+
+    forgotPasswordLink.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent default link behavior
+      forgotPasswordForm.classList.toggle('hidden'); // Toggle visibility of the forgot password form
+    });
+  </script>
+</body>
+</html>

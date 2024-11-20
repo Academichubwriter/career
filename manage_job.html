@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Management</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1 class="text-3xl font-semibold mb-4">Job Management</h1>
+        <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+            <thead class="bg-gray-200 text-gray-700">
+                <tr>
+                    <th class="py-3 px-6 text-left">Title</th>
+                    <th class="py-3 px-6 text-left">Description</th>
+                    <th class="py-3 px-6 text-left">Created At</th>
+                    <th class="py-3 px-6 text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                <!-- Example job row -->
+                <tr>
+                    <td class="py-4 px-6">Job Title</td>
+                    <td class="py-4 px-6">Job Description</td>
+                    <td class="py-4 px-6">2022-03-30</td>
+                    <td class="py-4 px-6 text-center">
+                        <form action="manage_jobs.php" method="post" class="inline">
+                            <input type="hidden" name="job_id" value="1"> <!-- Use a hidden input to pass the job ID -->
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">Edit</button>
+                        </form>
+                        <form action="delete_job.php" method="post" class="inline">
+                            <input type="hidden" name="job_id" value="1"> <!-- Use a hidden input to pass the job ID -->
+                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <!-- Repeat the above row for each job -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

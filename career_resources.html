@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Resources</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gray-100 min-h-screen">
+        <div class="max-w-3xl mx-auto py-8 px-4">
+            <h1 class="text-2xl font-semibold mb-4">Career Resources</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white rounded shadow-md p-4">
+                    <h2 class="text-lg font-semibold mb-2">Resume Writing</h2>
+                    <p class="mb-4">Tips and guidelines for writing an effective resume.</p>
+                    <a href="#" class="text-blue-500 hover:underline" onclick="toggleContent('resume-writing')">Learn More</a>
+                    <div id="resume-writing" class="hidden">
+                        <h3 class="font-semibold mt-4">Resume Writing Tips:</h3>
+                        <ul class="list-disc pl-8">
+                            <li>Contact Information: Include your name, phone number, email address, and optionally, your address.</li>
+                            <li>Professional Summary/Objective: Write a brief summary or objective statement.</li>
+                            <li>Experience: List your work experience in reverse chronological order.</li>
+                            <li>Education: Include your educational background.</li>
+                            <li>Skills: Highlight your key skills relevant to the job.</li>
+                            <li>Certifications and Awards: Include any relevant certifications or awards.</li>
+                            <li>Formatting: Use a clean, professional format.</li>
+                            <li>Tailor Your Resume: Customize your resume for each job application.</li>
+                            <li>Proofread: Carefully proofread your resume for any errors.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow-md p-4">
+                    <h2 class="text-lg font-semibold mb-2">Interview Preparation</h2>
+                    <p class="mb-4">Resources to help you prepare for job interviews.</p>
+                    <a href="#" class="text-blue-500 hover:underline" onclick="toggleContent('interview-preparation')">Learn More</a>
+                    <div id="interview-preparation" class="hidden">
+                        <h3 class="font-semibold mt-4">Interview Preparation Tips:</h3>
+                        <ul class="list-disc pl-8">
+                            <li>Research the Company: Understand the company's mission, values, products/services, and recent news.</li>
+                            <li>Review the Job Description: Familiarize yourself with the job requirements and responsibilities.</li>
+                            <li>Practice Common Interview Questions: Prepare responses to common interview questions.</li>
+                            <li>Behavioral Questions: Be ready to provide examples from your past experiences.</li>
+                            <li>Technical Questions (if applicable): For technical roles, be prepared to answer technical questions.</li>
+                            <li>Dress Appropriately: Choose professional attire.</li>
+                            <li>Arrive Early (or Log in Early): Be punctual for your interview.</li>
+                            <li>Bring Necessary Documents: Bring copies of your resume and other documents.</li>
+                            <li>Ask Questions: Prepare thoughtful questions to ask the interviewer.</li>
+                            <li>Follow-Up: Send a thank-you email after the interview.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow-md p-4">
+                    <h2 class="text-lg font-semibold mb-2">Job Search Strategies</h2>
+                    <p class="mb-4">Tips and techniques for finding the right job.</p>
+                    <a href="#" class="text-blue-500 hover:underline" onclick="toggleContent('job-search-strategies')">Learn More</a>
+                    <div id="job-search-strategies" class="hidden">
+                        <h3 class="font-semibold mt-4">Job Search Strategies:</h3>
+                        <ul class="list-disc pl-8">
+                            <li>Define Your Goals: Determine the type of job you are looking for, including the industry, position, and location.</li>
+                            <li>Update Your Resume: Tailor your resume to highlight relevant skills and experiences for each job application.</li>
+                            <li>Network: Connect with professionals in your desired industry through networking events, LinkedIn, and informational interviews.</li>
+                            <li>Use Online Job Boards: Utilize job search websites and platforms like Indeed, LinkedIn, and Glassdoor to find job listings.</li>
+                            <li>Company Websites: Visit the career pages of companies you are interested in to find job openings.</li>
+                            <li>Attend Job Fairs: Attend job fairs and career events to meet potential employers and learn about job opportunities.</li>
+                            <li>Utilize Social Media: Use social media platforms like LinkedIn, Twitter, and Facebook to network and find job openings.</li>
+                            <li>Work with Recruiters: Consider working with recruitment agencies or headhunters who can help you find job opportunities.</li>
+                            <li>Volunteer or Intern: Gain experience and expand your network by volunteering or interning in your desired field.</li>
+                            <li>Continuously Learn and Improve: Stay updated with industry trends and improve your skills through courses, workshops, and certifications.</li>
+                            <li>Stay Organized: Keep track of job applications, interviews, and networking contacts to stay organized and follow up effectively.</li>
+                            <li>Be Persistent: Job searching can be challenging, so stay motivated and persistent in your efforts.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow-md p-4">
+                    <h2 class="text-lg font-semibold mb-2
+                    <h2 class="text-lg font-semibold mb-2">Career Development</h2>
+                    <p class="mb-4">Guidance on advancing your career and professional growth.</p>
+                    <a href="#" class="text-blue-500 hover:underline" onclick="toggleContent('career-development')">Learn More</a>
+                    <div id="career-development" class="hidden">
+                        <h3 class="font-semibold mt-4">Career Development Tips:</h3>
+                        <ul class="list-disc pl-8">
+                            <li>Set Clear Goals: Define your long-term career goals and create a plan to achieve them.</li>
+                            <li>Continuous Learning: Stay updated with the latest trends and developments in your field.</li>
+                            <li>Networking: Build relationships with professionals in your industry.</li>
+                            <li>Seek Feedback: Request feedback from your peers, supervisors, and mentors.</li>
+                            <li>Embrace Challenges: Be open to new challenges and opportunities.</li>
+                            <li>Develop Soft Skills: Focus on developing soft skills such as communication, leadership, and problem-solving.</li>
+                            <li>Stay Flexible: Be open to changes in your career path.</li>
+                            <li>Balance Work and Life: Maintain a healthy work-life balance.</li>
+                            <li>Seek Mentorship: Find a mentor who can provide guidance and support.</li>
+                            <li>Celebrate Achievements: Acknowledge and celebrate your achievements.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle("hidden");
+        }
+    </script>
+</body>
+</html>
+

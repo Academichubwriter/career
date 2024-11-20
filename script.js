@@ -1,0 +1,40 @@
+/*Function to handle search input for job title
+document.getElementById('searchInput').addEventListener('input', function() {
+    var userInput = this.value.trim().toLowerCase();
+    var filteredLocations = locationsData.filter(function(location) {
+        return location.job_title.toLowerCase().includes(userInput);
+    });
+    renderLocations(filteredLocations);
+});*/
+
+const multiStepForm = document.querySelector("[data-multi-step]");
+const formSteps = [...multiStepForm.querySelectorAll("[data-step]")];
+let currentStep = formSteps.findIndex(step => step.classList.contains("active"));
+
+if (currentStep < 0) {
+    currentStep = 0;
+    showCurrentStep();
+}
+
+multiStepForm.addEventListener("click", e => {
+    let incrementor;
+    if (e.target.matches("[data-next]")) {
+        incrementor = 1;
+    } else if (e.target.matches("[data-previous]")) {
+        incrementor = -1;
+    }
+    if (incrementor == null) return;
+
+    const inputs = [...formSteps[currentStep].querySelectorAll("input")];
+    const allValid = inputs.every(input => input.reportValidity());
+    if (allValid) {
+        currentStep += incrementor;
+        showCurrentStep();
+    }
+});
+
+function showCurrentStep() {
+    formSteps.forEach((step, index) => {
+        step.classList.toggle("active", index === currentStep);
+    });
+}

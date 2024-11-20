@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Applications</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-gray-100 min-h-screen">
+        <div class="max-w-3xl mx-auto py-8 px-4">
+            <h1 class="text-2xl font-semibold mb-4">Candidate Applications</h1>
+            <div class="bg-white rounded shadow-md p-4">
+                <table class="w-full">
+                    <thead>
+                        <tr>
+                            <th class="border px-4 py-2">Candidate Name</th>
+                            <th class="border px-4 py-2">Email</th>
+                            <th class="border px-4 py-2">Resume</th>
+                            <th class="border px-4 py-2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border px-4 py-2">John Doe</td>
+                            <td class="border px-4 py-2">john.doe@example.com</td>
+                            <td class="border px-4 py-2"><a href="resume_john_doe.pdf" target="_blank" class="resume-link">View Resume</a></td>
+                            <td class="border px-4 py-2">
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded view-details">View Details</button>
+                                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded reject">Reject</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Jane Smith</td>
+                            <td class="border px-4 py-2">jane.smith@example.com</td>
+                            <td class="border px-4 py-2"><a href="resume_jane_smith.pdf" target="_blank" class="resume-link">View Resume</a></td>
+                            <td class="border px-4 py-2">
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded view-details">View Details</button>
+                                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded reject">Reject</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Michael Johnson</td>
+                            <td class="border px-4 py-2">michael.johnson@example.com</td>
+                            <td class="border px-4 py-2"><a href="resume_michael_johnson.pdf" target="_blank" class="resume-link">View Resume</a></td>
+                            <td class="border px-4 py-2">
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded view-details">View Details</button>
+                                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded reject">Reject</button>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.view-details').forEach(item => {
+            item.addEventListener('click', event => {
+                // Find the corresponding row and show/hide details
+                const row = item.closest('tr');
+                const details = row.nextElementSibling;
+                details.classList.toggle('hidden');
+            });
+        });
+
+        document.querySelectorAll('.reject').forEach(item => {
+            item.addEventListener('click', event => {
+                // Show a message and remove the row
+                alert('Candidate rejected');
+                const row = item.closest('tr');
+                row.remove();
+            });
+        });
+    </script>
+</body>
+</html>

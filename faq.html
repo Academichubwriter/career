@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto py-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h1>
+        <div class="accordion">
+            <!-- FAQ Item 1 -->
+            <div class="accordion-item">
+                <input type="checkbox" id="item1" class="accordion-toggle">
+                <label for="item1" class="accordion-title text-xl font-medium">How do I create an account?</label>
+                <div class="accordion-content">
+                    <p class="text-gray-600">To create an account, simply click on the "Sign Up" button on the top right corner of the page and follow the instructions.</p>
+                </div>
+            </div>
+            <!-- FAQ Item 2 -->
+            <div class="accordion-item">
+                <input type="checkbox" id="item2" class="accordion-toggle">
+                <label for="item2" class="accordion-title text-xl font-medium">Can I change my password?</label>
+                <div class="accordion-content">
+                    <p class="text-gray-600">Yes, you can change your password by going to the "Account Settings" section of your profile.</p>
+                </div>
+            </div>
+            <!-- FAQ Item 3 -->
+            <div class="accordion-item">
+                <input type="checkbox" id="item3" class="accordion-toggle">
+                <label for="item3" class="accordion-title text-xl font-medium">How do I apply for a job?</label>
+                <div class="accordion-content">
+                    <p class="text-gray-600">To apply for a job, go to the job listing and click on the "Apply Now" button. Follow the instructions to submit your application.</p>
+                </div>
+            </div>
+            <!-- FAQ Item 4 -->
+            <div class="accordion-item">
+                <input type="checkbox" id="item4" class="accordion-toggle">
+                <label for="item4" class="accordion-title text-xl font-medium">Can I delete my account?</label>
+                <div class="accordion-content">
+                    <p class="text-gray-600">Yes, you can delete your account by contacting our support team.</p>
+                </div>
+            </div>
+            <!-- FAQ Item 5 -->
+            <div class="accordion-item">
+                <input type="checkbox" id="item5" class="accordion-toggle">
+                <label for="item5" class="accordion-title text-xl font-medium">How do I contact customer support?</label>
+                <div class="accordion-content">
+                    <p class="text-gray-600">You can contact customer support by sending an email to support@career-link.com.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const accordions = document.querySelectorAll('.accordion-item');
+
+        accordions.forEach(item => {
+            item.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                accordions.forEach(item => item.classList.remove('open'));
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

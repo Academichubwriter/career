@@ -1,0 +1,705 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  margin:0;
+  padding:0;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-family: Glassdoor Sans, sans-serif;
+  background: #fff;
+  padding-right: 0;
+  width:100%;
+}
+input[type="email"],
+input[type="password"] {
+  padding: 10px; /* Adjust padding as needed */
+}
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+}
+
+/* Apply to the container where you want to remove the scrollbar padding */
+.container {
+  width:100%;
+  overflow-y: auto; /* or overflow-y: scroll; */
+  padding-right: 0; /* Remove padding added for scrollbar */
+}
+
+
+
+body, div, h1, h2, h3, h4, h5, h6, p {
+  color: #20262e;
+}
+
+
+/* Adjust layout for tablet and larger screens */
+@media (min-width: 768px) {
+  .container {
+    padding: 20px; /* Increase padding for larger screens */
+  }
+}
+
+
+/* Style for the map containers */
+.map-container {
+  width: 300px;
+  height: 200px;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.additional-info span {
+  display: block; /* Display each field in a separate line */
+  margin-bottom: 5px;
+}
+/* Style for posted info */
+.posted-info {
+  font-size: 14px;
+  color: #666;
+  padding: 10px;
+  width: 60%; /* Take 60% of the width */
+}
+#lottieAnimation{
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  height: auto; /* Set the container height to the full viewport height */
+}
+
+#searchInput1:focus,
+#searchInput2:focus {
+  outline: none;
+  border-color: #00a264;/*dodgerblue;*/
+}
+
+.material-symbols-outlined {
+font-variation-settings:
+'FILL' 0,
+'wght' 400,
+'GRAD' 0,
+'opsz' 24
+}
+
+
+.search-input-container {
+  display: inline-flex;
+  position: relative;
+  margin-right: 10px;
+  margin-left: 10px;
+}    
+
+.search-input-container input[type="text"]::placeholder {
+  padding-left: 30px; /* Adjust as needed */
+}
+.search-input-container input[type="text"] {
+  padding-left: 40px; /* Adjust as needed */
+  width: 200px;
+  padding: 10px; /* Add padding to the input field */
+}  
+
+.icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+}
+/* CSS Styles */
+
+
+/* CSS for View More button */
+.view-more-button {
+transform: translateX(-50%);
+background-color: #fff;;
+padding: 6px 10px;
+color: #20262e;
+border-top: 0.0000005px solid #20262e;
+border-left: 0.05px solid #20262e;
+border-right: 0.05px solid #20262e;
+border-bottom: none;
+border-radius: 4px;
+cursor: pointer;
+outline: none;
+font-size: 15px;
+}
+
+/* Hover effect */
+.view-more-button:hover {
+background-color: #1af09e;
+}
+
+.progress-bar {
+width: 100%;
+height: 20px;
+background-color: #ddd;
+border-radius: 10px;
+margin-bottom: 20px;
+}
+
+.progress-bar-fill {
+height: 100%;
+background-color: #00a264;
+border-radius: 10px;
+transition: width 0.3s ease-in-out;
+}
+.multi-step-form {
+margin: 0 auto;
+}
+.card{
+background-color: white;
+border: 1px solid #00a264;
+border-radius: 8px;
+width: 100%;
+margin: 0 auto;
+animation: fade 250ms ease-in-out forwards;
+background-color: white;
+border-radius: .5rem;
+margin-bottom: 20px;
+display: none;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+height: auto;
+}
+
+
+.form-group{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-bottom: .5rem;
+width:auto;
+}
+@media (max-width: 600px) {
+  .form-group {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;   
+min-width: unset;
+  }
+}
+.groupholder{
+  padding: 40px 8px;
+  
+
+
+}
+.form-group:last-child{
+margin: 0;
+
+}
+.form-group > label {
+font-weight: bold;
+font-size: .8em;
+color:#20262e;
+
+}
+.form-group > input {
+border: 1px solid #00a264;
+border-radius: .25em;
+font-size: 1rem;
+padding: .25em;
+}
+.step-title{
+margin:0;
+margin-bottom: 1rem;
+text-align: center;
+}
+.card.active{
+/*animation: slide 500ms 500ms ease-in-out forwards;*/
+animation: slide 250ms 125ms ease-in-out both;
+display: block;
+    
+   
+}
+.multi-step-form{
+overflow: hidden;
+width:100%;
+}
+.hide {
+display: none;
+}
+@keyframes slide {
+0% {
+transform:translateX(200%);
+opacity: 0;
+}
+
+100% {
+transform: translateX(0);
+opacity: 1;
+}
+}
+@keyframes fade {
+0% {
+transform:scale(1);
+opacity:1;
+}
+50% {
+transform: scale(.75);
+opacity: 0;
+}
+100% {
+opacity: 0;
+transform: scale(0);
+}
+}
+
+
+
+.animation-container{
+width: 200px; /* Set the width according to your animation */
+height: 300px; /* Set the height according to your animation */
+margin: 0 auto; /* Center the container horizontally */
+}
+.btn {
+position: fixed;
+left: 50%;
+transform: translateX(-50%);
+bottom: 5%;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+background-color: #00a264;
+padding: 6px 10px;
+color: #20262e;
+border-top: 0.0000005px solid #20262e;
+border-left: 0.05px solid #20262e;
+border-right: 0.05px solid #20262e;
+border-bottom: none;
+border-radius: 4px;
+cursor: pointer;
+outline: none;
+font-size: 15px;
+}
+
+
+
+
+.headerr{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.headerr i{
+color: #9736c4;
+}
+
+
+.wrapper header{
+color:#6990f2;
+font-size: 27px;
+font-weight: 600;
+text-align: center;
+}
+.wrapper .karl{
+height: 167px;
+display: flex;
+padding-right: 7px;
+margin: 30px;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+border-radius: 5px;
+border: 2px dashed #6990f2;
+}
+.karl :where(i, p){
+color: #6990f2;
+}
+.karl i{
+font-size:50px;
+margin-top: 15px;
+}
+section .row{
+background: #e9f0ff;
+margin-bottom: 10px;
+list-style: none;
+padding: 15px 20px;
+border-radius: 5px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+section .row i{
+font-weight: 50px;
+color:#6990f2;
+}
+section .details span{
+font-size: 14px;
+}
+.progress-area .row .content{
+width:100%;
+margin-left: 15px;
+}
+.progress-area .progress-bar{
+height: 6px;
+width: 100%;
+background: #fff;
+margin-bottom: 4px;
+border-radius: 30px;
+}
+.progress-area .progress{
+height:100%;
+width:0%;
+background: #6990f2;
+border-radius: inherit;
+}
+
+.uploaded-area{
+max-height:230px;
+overflow-y: scroll;
+}
+.uploaded-area::-webkit-scrollbar{
+width:0px;
+}
+.progress-area details{
+display: flex;
+align-items: ceter;
+justify-content: space-between;
+}
+.uploaded-area .row .content{
+display: flex;
+align-items: center;
+}
+.uploaded-area .row .details{
+display: flex;
+margin-left: 15px;
+flex-direction: column;
+}
+.uploaded-area .details .size{
+font-size: 11px;
+color: #404040;
+}
+.uploaded-area .fa-check{
+color: #6990f2;
+font-size: 30px;
+}
+
+.f1{
+color: white;
+}
+.cards{
+width:430px;
+padding: 30px;
+background: #6990f2;
+border-radius: 5px;
+margin-top: 1px;
+align-items: center;
+}
+.nextbtn{
+position: fixed;
+right: 0;
+transform: translateX(-50%);
+bottom: 2%;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+background-color: #00a264;
+padding: 6px 10px;
+color: #20262e;
+border-top: 0.0000005px solid #20262e;
+border-left: 0.05px solid #20262e;
+border-right: 0.05px solid #20262e;
+border-bottom: none;
+border-radius: 4px;
+cursor: pointer;
+outline: none;
+font-size: 15px;
+}
+.prevbtn{
+position: fixed;
+left: 30%;
+transform: translateX(-50%);
+bottom: 2%;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+background-color: #00a264;
+padding: 6px 10px;
+color: #20262e;
+border-top: 0.0000005px solid #20262e;
+border-left: 0.05px solid #20262e;
+border-right: 0.05px solid #20262e;
+border-bottom: none;
+border-radius: 4px;
+cursor: pointer;
+outline: none;
+font-size: 15px;
+}
+#formholder {
+  position: relative;
+  /* Styles for the form holder */
+  width: 50%; /* Set the width of the form holder */
+  min-width: 300px; /* Set the minimum width of the form holder */
+  background-color: #fff; /* Background color of the form holder */
+  border-radius: 5px; /* Border radius for rounded corners */
+  box-shadow: 0 0 10px rgba(87, 29, 144, 0.9); /* Box shadow for a subtle effect */
+  padding: 20px; /* Padding for the content inside the form holder */
+  min-height: 35%;
+  height:auto
+}
+@media screen and (max-width: 768px) {
+  #formholder {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+      height: auto;/* Adjust the height as needed */
+      min-height: unset; /* Optionally reset the min-height */
+  }
+}
+.multi-step-form{
+    padding-top: 10px;
+  }
+
+@media screen and (max-width: 768px) {
+  .secholder {
+      min-height: unset; /* Optionally reset the min-height */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .multi-step-form {
+    min-height: unset; /* Reset the min-height property */
+  }
+}
+
+
+@media (max-width: 600px) {
+#formholder {
+width: 90%;
+min-width: unset;
+}
+}
+
+/* Media query for phones */
+@media only screen and (max-width: 576px) {
+  /* Existing styles */
+
+  /* Adjust progress bar width to fit the screen */
+  .progress-area .progress-bar {
+      width: calc(100% - 30px); /* Subtract the padding from the width */
+  }
+
+  /* Ensure the uploaded area does not overflow */
+  .uploaded-area {
+      overflow-x: hidden; /* Hide horizontal overflow */
+  }
+}
+.secholder{
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width:100%;
+
+}
+.work {
+  width:100%;
+  margin-bottom: 1rem; /* Adjust margin as needed */
+  margin-top: 1rem;
+}
+
+.work label {
+  font-weight: bold;
+  padding: 10px;
+}
+#work_experience{
+  padding: 15px;
+  margin-bottom: 35px;
+}
+.work textarea {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column;
+  width: 100%; /* Make the textarea fill its container */
+  padding: 8px; /* Adjust padding as needed */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
+  resize: vertical; /* Allow vertical resizing */
+  margin-bottom: 20px;
+  
+}
+
+.work textarea:focus {
+  outline: none; /* Remove outline on focus */
+  border-color: #00a264; /* Change border color on focus */
+}
+#map {
+  height: 400px;
+  width: 100%;
+}
+.containerr{
+  margin-top: 8px;
+  
+}
+.containerr ul{
+  margin-left: 16px;
+}
+@media (max-width: 576px) {
+  #map{
+    width: 100%; /* Adjust width for smaller screens */
+   height:220px;
+  }
+}
+
+.subbtn{
+  position: fixed;
+  right:0;
+  transform: translateX(-50%);
+  bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #00a264;
+  padding: 6px 10px;
+  color: #20262e;
+  border-top: 0.0000005px solid #20262e;
+  border-left: 0.05px solid #20262e;
+  border-right: 0.05px solid #20262e;
+  border-bottom: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  font-size: 15px;
+  }
+  .maphead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+  }
+  /* Style for .formgroupp */
+/* Style for form container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  
+}
+
+/* Style for .formgroupp */
+.formgroupp {
+  margin-bottom: 20px;
+  text-align: center; /* Center text horizontally */
+}
+
+/* Style for labels */
+.formgroupp label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Style for select menu */
+.formgroupp select {
+  width: 200px; /* Adjust width as needed */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style for text input fields */
+.formgroupp input[type="text"],
+.formgroupp textarea {
+  width: 200px; /* Adjust width as needed */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  
+}
+
+/* Style for submit button */
+.formgroupp input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+/* Style for submit button on hover */
+.formgroupp input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+/* Style for input field within the .salary container */
+.salary input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 200px; /* Adjust the width as needed */
+  box-sizing: border-box;
+  margin-top: 5px; /* Add margin top for spacing */
+}
+
+/* Optional: Style for input placeholder within the .salary container */
+.salary input[type="number"]::placeholder {
+  color: #999;
+}
+.grouphold {
+  margin-bottom: 20px;
+}
+
+.work {
+  margin-top: 20px;
+}
+
+.search-result {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; /* Display content in a row by default */
+  align-items: center;
+  margin-bottom: 20px; /* Add some space between search results */
+  border-top-left-radius:20px;
+  border-top-right-radius: 20px;
+  border:solid 1px #20262e;
+  overflow: hidden;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.search-results {
+  
+  align-items: center;  
+  width:100%;
+
+}

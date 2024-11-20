@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career-Link | Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<style>
+            body{
+            body {
+    /* Hide the vertical scrollbar */
+    overflow-y: hidden;
+}
+        }
+.holder {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    margin: 0;
+    
+}
+.active-job {
+    background-color: #f0f0f0; /* Change the background color as needed */
+}
+/*
+.map-container {
+    width: 100%;
+    height: calc(100% - 120px); 
+    position: absolute;
+    z-index: 0;
+    bottom: -22%;    
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+*/
+
+.column-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  background-color: #333;
+}
+
+
+
+/* CSS styles for organization data */
+.organization-data {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+    overflow-wrap: break-word;
+    max-width: 280px;
+}
+.field-value{
+    color: white;
+}
+
+.search-contain {
+    
+    margin-bottom: 20px;   
+    width:100%;
+    overflow-y: auto;
+}
+
+/* CSS styles for "View More" button */
+.view-more-button {
+    padding: 6px 10px;
+    margin-top: 10px;
+}
+.field-value{
+    font-size: 14px;
+    padding-left: 12px;
+}
+.field-name{
+    font-weight: bold;
+    font-size: 14px;
+    color: #00a264;
+    padding: 6px;
+}
+
+.search-result{
+    margin-bottom: 40px;
+}
+
+.holder {
+    width:100%;
+}
+
+/* CSS styles for column container */
+/* CSS styles for column container */
+.column-container {
+    display: flex; /* Display columns side by side */
+    align-items: flex-start; /* Align columns at the top */
+    flex-wrap: wrap; /* Allow columns to wrap to the next line */
+}
+
+/* CSS styles for left column */
+.left-column {
+    flex: 1; /* Equal width for both columns */
+    margin-right: 35px; /* Add margin on the right side */
+}
+
+/* CSS styles for right column */
+.right-column {
+    flex: 1; /* Equal width for both columns */
+    margin-right: 0;
+}
+
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .left-column, 
+    .right-column {
+        flex-basis: calc(50% - 20px); /* Set initial width for each column */
+        max-width: calc(50% - 20px); /* Set maximum width for each column */
+    }
+    #detailsz {
+    margin-top: 20px;
+    background-color: #333;
+    }
+}
+@media screen and (max-width: 768px) {
+    body{
+        overflow-y: auto;
+    }
+}
+
+/* CSS styles for right column */
+.right-column {
+    flex: 1; /* Equal width for both columns */
+    margin-right: 0; /* Remove margin on the right side */
+}
+
+
+
+
+.additional-info {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 2px; /* Adjust margin as needed */
+}
+
+.search-container{
+    width:100%;
+}        
+        .search-container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        
+        .search-container input[type="text"]:last-child {
+            margin-right: 0;
+        }
+.searchholder{
+    position: relative;
+    width: 100%; /* Or set a specific width */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    padding:0 20px 20px 20px;
+}
+.inputhold{
+    padding-bottom: 15px;
+}
+.container {
+    width: 90%;
+}
+@media screen and (max-width: 768px) {
+    .details-section {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%; /* Adjust as needed */
+    }
+}
+.overallcontainer {
+    display: flex;
+    width: 100%; /* Occupy the whole screen width */
+    margin: 0; /* Remove default margin */
+}
+
+.overview-section {
+    flex: 0 0 30%; /* Set flex basis to 30% */
+    margin-right: 20px;
+}
+
+.details-section {
+    flex: 1; /* Let it occupy remaining space */
+    overflow-y: auto;
+    height:100vh;
+    width: 50%;
+    
+}
+.field-value
+.section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    
+}
+.overview-content {
+    overflow-y: auto;
+    height: 100vh; /* Adjust as needed */ 
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 768px) {
+    .field-value{
+        color:orange;
+    }    
+    .overview-section {
+        width: 100%; /* Set width to 100% when viewport width is less than 768px */
+    }
+}
+@media screen and (max-width: 775px) {
+    .overview-content {
+        overflow-y: hidden;
+        height: auto;
+    }
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 40% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  overflow: auto;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Adjust height of job details container */
+#modalJobDetails {
+  height: 60vh; /* Adjust height as needed */
+  overflow-y: auto; /* Add scroll if content exceeds container height */
+}
+.job-details{
+    padding: 15px 15px 21px 15px;
+    background-color: #00a264;
+    position: relative;
+}
+.apply-now-button{
+    background-color: #4dd783;
+    color: #000;
+    font-size: 14px;
+    padding: 6px 8px;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    align-items: center;
+}
+.apply-now-button2{
+    background-color: #00a264;;
+    color: #00a264;
+    font-size: 14px;
+    padding: 6px 8px;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    align-items: center;
+    top:50%;
+    right:5%;
+    position: absolute;
+
+}
+.apply-now-button:hover{
+    color:white;
+}
+.apply-now-button2:hover{
+    color:white;
+}
+.job-tittle .h1{
+    font-size: 24px;
+}
+
+.active-job {
+            background-color: #aaa;
+        }
+
+        #detailsz {
+            margin-top: 20px;
+            background-color: #333;
+        }
+
+</style>
+<body class="bg-gray-100">
+    
+    <section class="bodyjobs">
+        <div class="overallcontainer">
+            <!-- Overview section aligned to the left -->
+            <div class="overview-section section">
+                <h2>Jobs Overview</h2>
+                <div class="search-container">
+                    <div class="searchholder">
+                        <div class="inputhold">
+                            <input type="text" id="searchInput1" placeholder="Search by job title">
+                        </div>
+                        <input type="text" id="searchInput2" placeholder="Search by location">
+                    </div>
+                </div>
+                <div class="overview-content" id="overvieww">
+                    <div class="container">
+                        <div class="search-container">
+                            
+                            <div id="searchResults"></div>
+                        </div>
+                    </div>
+                    <!-- Lottie animation -->
+                    <div id="lottieAnimation" style="width: 400px; height: 400px;"></div>
+                </div>
+            </div>
+    
+            <!-- Details section aligned to the right -->
+            <div class="details-section section">
+                <h2>Job Details</h2>
+                <div id="detailsz"></div>
+            </div>
+    
+            <div id="detailsModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <!-- Close button for the modal -->
+                    <span class="close">&times;</span>
+                    <!-- Job details content -->
+                    <div id="modalJobDetails"></div>
+                </div>
+            </div>
+        </div>
+                    
+       
+            <div id="lottieAnimation" style="width: 400px; height: 400px;"></div>
+        
+                    <!-- Google Maps JavaScript API -->
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEriT4z_3CZYJU83eNKidV1K5aE1RP0mc&callback=initMaps" async defer></script>
+        
+                    <script>
+
+
+                document.addEventListener('DOMContentLoaded', function () {
+        // Get the job details section
+        var jobDetailsSection = document.getElementById('detailsz');
+    
+        // Function to display "Searching..." in the job details section
+        function displaySearching() {
+            jobDetailsSection.textContent = 'Searching...';
+        }
+    
+        // Function to update the job details section with actual job details
+        function updateJobDetails(jobDetails) {
+            // Update the job details section with the actual job details
+            jobDetailsSection.innerHTML = `
+                <!-- Update job details content here -->
+            `;
+        }
+    
+        // Function to display "No results found" message
+        function displayNoResults() {
+            jobDetailsSection.textContent = 'No results found.';
+        }
+    
+        // Add event listeners to search input elements
+        document.getElementById('searchInput1').addEventListener('input', function () {
+            var userInput1 = this.value.trim().toLowerCase();
+            var userInput2 = document.getElementById('searchInput2').value.trim().toLowerCase();
+    
+            // Display "Searching..." message if there's an active search
+            if (userInput1 !== '' || userInput2 !== '') {
+                displaySearching();
+            }
+    
+            // Filter locations based on search inputs
+            var filteredLocations = locationsData.filter(function (location) {
+                return location.job_title.toLowerCase().includes(userInput1) && location.name.toLowerCase().includes(userInput2);
+            });
+    
+            // Update job details based on search results
+            if (filteredLocations.length > 0) {
+                // Update job details with the first matching result
+                updateJobDetails(filteredLocations[0]);
+            } else {
+                // Display "No results found" if no matching results are found
+                displayNoResults();
+            }
+        });
+    
+        document.getElementById('searchInput2').addEventListener('input', function () {
+            var userInput1 = document.getElementById('searchInput1').value.trim().toLowerCase();
+            var userInput2 = this.value.trim().toLowerCase();
+    
+            // Display "Searching..." message if there's an active search
+            if (userInput1 !== '' || userInput2 !== '') {
+                displaySearching();
+            }
+    
+            // Filter locations based on search inputs
+            var filteredLocations = locationsData.filter(function (location) {
+                return location.job_title.toLowerCase().includes(userInput1) && location.name.toLowerCase().includes(userInput2);
+            });
+    
+            // Update job details based on search results
+            if (filteredLocations.length > 0) {
+                // Update job details with the first matching result
+                updateJobDetails(filteredLocations[0]);
+            } else {
+                // Display "No results found" if no matching results are found
+                displayNoResults();
+            }
+        });
+    
+        // Display "Searching..." initially
+        displaySearching();
+    
+        // Rest of your existing code...
+    });
+    
+                    function renderLocations(locations) {
+        var searchResultsDiv = document.getElementById('searchResults');
+        searchResultsDiv.innerHTML = '';
+    
+        var searchResultsContainer = document.createElement('div');
+        searchResultsContainer.classList.add('search-results');
+    
+        var lottieContainer = document.getElementById('lottieAnimation');
+        lottieContainer.innerHTML = '';
+    
+        if (locations.length === 0) {
+            // Display "No results found" message
+            var noResultsMessage = document.createElement('div');
+            noResultsMessage.textContent = 'No results found';
+            searchResultsContainer.appendChild(noResultsMessage);
+        } else {
+            locations.forEach(function (location, index) {
+                // Render search results as usual
+                // Your existing code to render search results...
+            });
+        }
+    
+        searchResultsDiv.appendChild(searchResultsContainer);
+    }
+    
+                    document.addEventListener('DOMContentLoaded', function () {
+                var searchResultsContainer = document.getElementById('searchResults');
+                searchResultsContainer.addEventListener('click', function (event) {
+                    var target = event.target;
+                    var searchResult = target.closest('.search-result');
+                    if (searchResult) {
+                        var jobId = searchResult.getAttribute('data-job-id');
+                        if (jobId) {
+                            fetchJobDetails(jobId);
+                        }
+                        // Remove 'active-job' class from all search results
+                        var searchResults = searchResultsContainer.querySelectorAll('.search-result');
+                        searchResults.forEach(function(result) {
+                            result.classList.remove('active-job');
+                        });
+                        // Add 'active-job' class to the clicked search result
+                        searchResult.classList.add('active-job');
+                    }
+                });
+            });  
+            document.addEventListener('DOMContentLoaded', function () {
+                var searchResultsContainer = document.getElementById('searchResults');
+                searchResultsContainer.addEventListener('click', function (event) {
+                    console.log('Search result clicked');
+                    var target = event.target.closest('.search-result');
+                    if (target) {
+                        var jobId = target.getAttribute('data-job-id');
+                        console.log('Job ID:', jobId);
+                        if (jobId) {
+                            fetchJobDetails(jobId);
+                            // Show job details section
+                            var detailsSection = document.getElementById('details-section');
+                            console.log('Details section:', detailsSection);
+                            if (detailsSection) {
+                                detailsSection.style.display = 'block';
+                                console.log('Details section displayed');
+                            } else {
+                                console.log('Details section not found');
+                            }
+                        }
+                    }
+                });
+            });
+                        var locationsData = [];
+                
+                        function initMaps() {
+                            fetch('fetch_locations.php')
+                                .then(response => response.json())
+                                .then(locations => {
+                                    locationsData = locations;
+                                    renderLocations(locations);
+                                })
+                                .catch(error => console.error('Error fetching locations:', error));
+                        }
+                
+                        function renderLocations(locations) {
+                var searchResultsDiv = document.getElementById('searchResults');
+                searchResultsDiv.innerHTML = '';
+            
+                var searchResultsContainer = document.createElement('div');
+                searchResultsContainer.classList.add('search-results');
+            
+                var lottieContainer = document.getElementById('lottieAnimation');
+                lottieContainer.innerHTML = '';
+            
+                if (locations.length === 0) {
+                    var animation = lottie.loadAnimation({
+                        container: lottieContainer,
+                        renderer: 'svg',
+                        loop: true,
+                        autoplay: true,
+                        path: 'Animation - 1707606052918.json'
+                    });
+                } else {
+                    locations.forEach(function (location, index) {
+                        var resultDiv = document.createElement('div');
+                        resultDiv.classList.add('search-result');
+                        resultDiv.setAttribute('data-job-id', location.id);
+            
+                        var holderDiv = document.createElement('div');
+                        holderDiv.classList.add('holder');
+            
+                        var columnContainer = document.createElement('div');
+                        columnContainer.classList.add('column-container');
+            
+                        var leftColumn = document.createElement('div');
+                        leftColumn.classList.add('left-column');
+                        var additionalInfoLeft = document.createElement('div');
+                        additionalInfoLeft.classList.add('additional-info');
+                        additionalInfoLeft.innerHTML = '<div class="field-name">Organization:</div>' +
+                            '<div class="field-value">' + location.organization + '</div>' +
+                            '<div class="field-name">Name:</div>' +
+                            '<div class="field-value">' + location.name + '</div>' +
+                            '<div class="field-name">Country:</div>' +
+                            '<div class="field-value">' + location.country + '</div>' +
+                            '<div class="field-name green-text">Posted:</div>' +
+                            '<div class="field-value grey-text">' + getPostedTime(location.posted_time) + '</div>';
+            
+                        var rightColumn = document.createElement('div');
+                        rightColumn.classList.add('right-column');
+                        var additionalInfoRight = document.createElement('div');
+                        additionalInfoRight.classList.add('additional-info');
+                        additionalInfoRight.innerHTML = '<div class="field-name">Job Title:</div>' +
+                            '<div class="field-value">' + location.job_title + '</div>' +
+                            '<div class="field-name">Job Type:</div>' +
+                            '<div class="field-value">' + location.job_type + '</div>' +
+                            '<div class="field-name">Average Salary:</div>' +
+                            '<div class="field-value">' + location.average_salary + '</div>' +
+                            '<button class="apply-now-button">Apply Now</button>';
+            
+                        leftColumn.appendChild(additionalInfoLeft);
+                        rightColumn.appendChild(additionalInfoRight);
+            
+                        additionalInfoRight.querySelector('.apply-now-button').addEventListener('click', function () {
+                            window.location.href = 'insert_submission.html';
+                        });
+            
+                        columnContainer.appendChild(leftColumn);
+                        columnContainer.appendChild(rightColumn);
+            
+                        holderDiv.appendChild(columnContainer);
+            
+                        resultDiv.appendChild(holderDiv);
+            
+                        searchResultsContainer.appendChild(resultDiv);
+            
+                        // Add 'active-job' class and render details for the first job by default
+                        if (index === 0) {
+                            resultDiv.classList.add('active-job');
+                            renderJobDetails(location);
+                        }
+                    });
+                }
+            
+                searchResultsDiv.appendChild(searchResultsContainer);
+            } 
+                        function getPostedTime(postedTime) {
+                            var currentTime = new Date();
+                            var timeDifference = currentTime.getTime() - new Date(postedTime).getTime();
+                
+                            var minutes = Math.floor(timeDifference / (1000 * 60));
+                            var hours = Math.floor(timeDifference / (1000 * 60 * 60));
+                            var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                
+                            if (days > 1) {
+                                return new Date(postedTime).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                            } else if (hours > 1) {
+                                return hours + ' hours ago';
+                            } else if (minutes > 1) {
+                                return minutes + ' minutes ago';
+                            } else {
+                                return 'just now';
+                            }
+                        }
+                
+                        document.getElementById('searchInput1').addEventListener('input', function () {
+                            var userInput1 = this.value.trim().toLowerCase();
+                            var userInput2 = document.getElementById('searchInput2').value.trim().toLowerCase();
+                            var filteredLocations = locationsData.filter(function (location) {
+                                return location.job_title.toLowerCase().includes(userInput1) && location.name.toLowerCase().includes(userInput2);
+                            });
+                            renderLocations(filteredLocations);
+                        });
+                
+                        document.getElementById('searchInput2').addEventListener('input', function () {
+                            var userInput1 = document.getElementById('searchInput1').value.trim().toLowerCase();
+                            var userInput2 = this.value.trim().toLowerCase();
+                            var filteredLocations = locationsData.filter(function (location) {
+                                return location.job_title.toLowerCase().includes(userInput1) && location.name.toLowerCase().includes(userInput2);
+                            });
+                            renderLocations(filteredLocations);
+                        });
+            
+                        function fetchJobDetails(jobData) {
+                renderJobDetails(jobData);
+            }
+            document.addEventListener('DOMContentLoaded', function () {
+                // Function to show the modal
+                function showModal(jobDetails) {
+                    modal.style.display = 'block';
+                    // Update modal content with job details
+                    modalContent.innerHTML = `
+                        <h2>${jobDetails.job_title}</h2>
+                        <p>${jobDetails.description}</p>
+                        <!-- Add more job details here as needed -->
+                    `;
+                }
+            
+                // Get the modal element
+                var modal = document.getElementById('detailsModal');
+            
+                // Get the modal content element
+                var modalContent = document.getElementById('modalJobDetails');
+            
+                // Function to close the modal
+                function closeModal() {
+                    modal.style.display = 'none';
+                }
+            
+                // Get the search results container
+                var searchResults = document.getElementById('searchResults');
+            
+                // Check if viewport width is less than or equal to 768px
+                if (window.innerWidth <= 768) {
+                    // Event listener for clicks on search results
+                    searchResults.addEventListener('click', function (event) {
+                        var jobId = event.target.closest('.search-result').getAttribute('data-job-id');
+                        console.log('Job ID clicked:', jobId); // Add this line for debugging
+                        // Fetch job details based on jobId
+                        var jobDetails = fetchJobDetails(jobId); // You need to implement this function
+                        showModal(jobDetails);
+                    });
+            
+                    // Get the <span> element that closes the modal
+                    var closeBtn = document.querySelector('.close');
+            
+                    // Event listener to close the modal when the close button is clicked
+                    closeBtn.addEventListener('click', function () {
+                        closeModal();
+                    });
+            
+                    // Event listener to close the modal when clicking outside the modal content
+                    window.addEventListener('click', function (event) {
+                        if (event.target == modal) {
+                            closeModal();
+                        }
+                    });
+                }
+            });
+            
+            
+            function renderJobDetails(jobDetails) {
+                var detailsSection = document.getElementById('detailsz');
+                detailsSection.innerHTML = '';
+            
+                if (window.innerWidth <= 768) {
+                    var modalJobDetails = document.getElementById('modalJobDetails');
+                    modalJobDetails.innerHTML = '';
+            
+                    var jobDetailsDiv = document.createElement('div');
+                    jobDetailsDiv.classList.add('job-details');
+                    // Include field names for elements outside the job-details div
+                    jobDetailsDiv.innerHTML = `
+                        <div>${jobDetails.organization}</div>
+                        <div>${jobDetails.job_title}</div>
+                        <div>${jobDetails.name}</div>
+                        
+                    `;
+                    modalJobDetails.appendChild(jobDetailsDiv);
+            
+                    // Append other job details with field names outside the job-details div
+                    modalJobDetails.innerHTML += `
+                        <div class="field-name">Description:</div>
+                        <div class="field-value">${jobDetails.description}</div>
+                        <div class="field-name">Country:</div>
+                        <div class="field-value">${jobDetails.country}</div>
+                        <div class="field-name">Posted Time:</div>
+                        <div class="field-value">${jobDetails.posted_time}</div>
+                        <div class="field-name">Average Salary:</div>
+                        <div class="field-value">${jobDetails.average_salary}</div>
+                        <div id="modalJobMap" style="width: 100%; height: 400px;"></div>
+                    `;
+            
+                    initializeMap('modalJobMap', jobDetails);
+            
+                    var modal = document.getElementById('detailsModal');
+                    modal.style.display = 'block';
+                } else {
+                    var jobDetailsDiv = document.createElement('div');
+                    jobDetailsDiv.classList.add('job-details');
+                    jobDetailsDiv.innerHTML = `
+                        <div>${jobDetails.organization}</div>
+                        <h2>${jobDetails.job_title}</h2>
+                        <div>${jobDetails.name}</div>
+                        <button class="apply-now-button2">Easy apply</button>
+                    `;
+                    
+                    detailsSection.appendChild(jobDetailsDiv);
+
+                    jobDetailsDiv.querySelector('.apply-now-button2').addEventListener('click', function () {
+                window.location.href = 'insert_submission.html';
+            });
+            
+                    // Append the rest of the job details with field names outside the job-details div
+                    detailsSection.innerHTML += `
+                        <div class="field-name">Description:</div>
+                        <div class="field-value">${jobDetails.description}</div>
+                        <div class="field-name">Country:</div>
+                        <div class="field-value">${jobDetails.country}</div>
+                        <div class="field-name">Posted Time:</div>
+                        <div class="field-value">${jobDetails.posted_time}</div>
+                        <div class="field-name">Average Salary:</div>
+                        <div class="field-value">${jobDetails.average_salary}</div>
+                    `;
+            
+                    // Adding map to the regular details section
+                    addMapToDetailsSection(detailsSection, jobDetails);
+                }
+            }
+            
+            function initializeMap(elementId, jobDetails) {
+                var mapElement = document.getElementById(elementId);
+                var map = new google.maps.Map(mapElement, {
+                    center: { lat: parseFloat(jobDetails.latitude), lng: parseFloat(jobDetails.longitude) },
+                    zoom: 12
+                });
+            
+                var marker = new google.maps.Marker({
+                    position: { lat: parseFloat(jobDetails.latitude), lng: parseFloat(jobDetails.longitude) },
+                    map: map,
+                    title: jobDetails.location
+                });
+            }
+            
+            function addMapToDetailsSection(sectionElement, jobDetails) {
+                var mapDiv = document.createElement('div');
+                mapDiv.id = 'jobMap';
+                mapDiv.style.width = '100%';
+                mapDiv.style.height = '400px';
+                sectionElement.appendChild(mapDiv);
+            
+                initializeMap('jobMap', jobDetails);
+            }
+            
+            document.addEventListener('DOMContentLoaded', function () {
+        var searchResultsContainer = document.getElementById('searchResults');
+        
+        
+    // Close modal function
+    function closeModal() {
+        var modal = document.getElementById('detailsModal');
+        modal.style.display = 'none'; // Hide the modal
+    }
+    
+    searchResultsContainer.addEventListener('click', function (event) {
+        var target = event.target;
+        var searchResult = target.closest('.search-result');
+        if (searchResult) {
+            var jobId = searchResult.getAttribute('data-job-id');
+            if (jobId) {
+                var selectedJob = locationsData.find(function(job) {
+                    return job.id === jobId;
+                });
+                if (selectedJob) {
+                    fetchJobDetails(selectedJob);
+                }
+            }
+            // Remove 'active-job' class from all search results
+            var searchResults = searchResultsContainer.querySelectorAll('.search-result');
+            searchResults.forEach(function(result) {
+                result.classList.remove('active-job');
+            });
+            // Add 'active-job' class to the clicked search result
+            searchResult.classList.add('active-job');
+    
+            // Check if the viewport width is less than or equal to 768px
+            if (window.innerWidth <= 768) {
+                // Open the modal only if the viewport width is less than or equal to 768px
+                var modal = document.getElementById('detailsModal');
+                modal.style.display = 'block';
+            }
+        }
+    });
+    
+    // Event listeners for search inputs to close the modal when typing
+    document.getElementById('searchInput1').addEventListener('input', closeModal);
+    document.getElementById('searchInput2').addEventListener('input', closeModal);
+    
+    });
+            document.addEventListener('DOMContentLoaded', function () {
+                var searchResultsContainer = document.getElementById('searchResults');
+                searchResultsContainer.addEventListener('click', function (event) {
+                    var target = event.target;
+                    var searchResult = target.closest('.search-result');
+                    if (searchResult) {
+                        var jobId = searchResult.getAttribute('data-job-id');
+                        if (jobId) {
+                            var selectedJob = locationsData.find(function(job) {
+                                return job.id === jobId;
+                            });
+                            if (selectedJob) {
+                                fetchJobDetails(selectedJob);
+                            }
+                        }
+                        // Remove 'active-job' class from all search results
+                        var searchResults = searchResultsContainer.querySelectorAll('.search-result');
+                        searchResults.forEach(function(result) {
+                            result.classList.remove('active-job');
+                        });
+                        // Add 'active-job' class to the clicked search result
+                        searchResult.classList.add('active-job');
+                    }
+                });
+            });
+                    window.onload = initMaps;
+                </script>
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        // Job Seekers submenu
+                        var jobSeekersMenuItem = document.getElementById('jobSeekersMenuItem');
+                        var jobSeekersSubMenu = document.getElementById('jobSeekersSubMenu');
+                        jobSeekersMenuItem.addEventListener('click', function(e) {
+                            e.preventDefault(); // Prevent the default action of the link
+                            jobSeekersSubMenu.classList.toggle('hidden');
+                        });
+            
+                        // Employers submenu
+                        var employersMenuItem = document.getElementById('employersMenuItem');
+                        var employersSubMenu = document.getElementById('employersSubMenu');
+                        employersMenuItem.addEventListener('click', function(e) {
+                            e.preventDefault(); // Prevent the default action of the link
+                            employersSubMenu.classList.toggle('hidden');
+                        });
+                    });
+                </script>
+
+    </section>
+</body>
+</html>
